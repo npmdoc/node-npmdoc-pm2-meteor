@@ -1,0 +1,1963 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/andruschka/pm2-meteor">pm2-meteor (v0.4.1)</a>
+</h1>
+<h4>Simplest way to deploy, scale and run Meteor Apps with PM2.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pm2-meteor">module pm2-meteor</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pm2-meteor.</span>commandList</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pm2-meteor.</span>commonTasks</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pm2-meteor.</span>localTasks</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pm2-meteor.</span>remoteTasks</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pm2-meteor.commandList">module pm2-meteor.commandList</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.commandList.deploy">
+            function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>deploy
+            <span class="apidocSignatureSpan">(reconfig)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.commandList.generateBundle">
+            function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>generateBundle
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.commandList.init">
+            function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.commandList.logs">
+            function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>logs
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.commandList.revert">
+            function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>revert
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.commandList.scale">
+            function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>scale
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.commandList.start">
+            function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.commandList.status">
+            function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>status
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.commandList.stop">
+            function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>stop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.commandList.undeploy">
+            function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>undeploy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pm2-meteor.commonTasks">module pm2-meteor.commonTasks</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.commonTasks.readPM2MeteorConfig">
+            function <span class="apidocSignatureSpan">pm2-meteor.commonTasks.</span>readPM2MeteorConfig
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pm2-meteor.localTasks">module pm2-meteor.localTasks</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.localTasks.bundleApplication">
+            function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>bundleApplication
+            <span class="apidocSignatureSpan">(pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.localTasks.bundleGitApplication">
+            function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>bundleGitApplication
+            <span class="apidocSignatureSpan">(pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.localTasks.bundleLocalApplication">
+            function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>bundleLocalApplication
+            <span class="apidocSignatureSpan">(pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.localTasks.generatePM2EnvironmentSettings">
+            function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>generatePM2EnvironmentSettings
+            <span class="apidocSignatureSpan">(pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.localTasks.initPM2MeteorSettings">
+            function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>initPM2MeteorSettings
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.localTasks.makeClean">
+            function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>makeClean
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.localTasks.makeCleanAndLeaveBundle">
+            function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>makeCleanAndLeaveBundle
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pm2-meteor.remoteTasks">module pm2-meteor.remoteTasks</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.backupLastTar">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>backupLastTar
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.checkDeps">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>checkDeps
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.deleteAppFolder">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>deleteAppFolder
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.extractTarBall">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>extractTarBall
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.getAppLogs">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>getAppLogs
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.getRemoteSession">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>getRemoteSession
+            <span class="apidocSignatureSpan">(pm2mConf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.hardReloadApp">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>hardReloadApp
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.installBundleDeps">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>installBundleDeps
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.killApp">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>killApp
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.prepareHost">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>prepareHost
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.reloadApp">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>reloadApp
+            <span class="apidocSignatureSpan">(session, pm2mConf, reconfig, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.revertToBackup">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>revertToBackup
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.scaleApp">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>scaleApp
+            <span class="apidocSignatureSpan">(session, pm2mConf, sParam, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.shipTarBall">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>shipTarBall
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.softReloadApp">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>softReloadApp
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.startApp">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>startApp
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.status">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>status
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pm2-meteor.remoteTasks.stopApp">
+            function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>stopApp
+            <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pm2-meteor" id="apidoc.module.pm2-meteor">module pm2-meteor</a></h1>
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pm2-meteor.commandList" id="apidoc.module.pm2-meteor.commandList">module pm2-meteor.commandList</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.commandList.deploy" id="apidoc.element.pm2-meteor.commandList.deploy">
+        function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>deploy
+        <span class="apidocSignatureSpan">(reconfig)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deploy = function (reconfig) {
+  var pm2mConf, session;
+  cli.spinner("Building your app and deploying to host machine");
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  session = remoteTasks.getRemoteSession(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.checkDeps(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.prepareHost(session, pm2mConf, cb);
+    }, function(cb) {
+      return localTasks.generatePM2EnvironmentSettings(pm2mConf, cb);
+    }, function(cb) {
+      return localTasks.bundleApplication(pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.backupLastTar(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.shipTarBall(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.extractTarBall(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.installBundleDeps(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.reloadApp(session, pm2mConf, reconfig, cb);
+    }
+  ], function(err) {
+    cli.spinner("", true);
+    if (err) {
+      localTasks.makeClean(function(err) {
+        if (err) {
+          return cli.error(err);
+        }
+      });
+      return cli.fatal("" + err.message);
+    } else {
+      localTasks.makeClean(function(err) {
+        if (err) {
+          return cli.error(err);
+        }
+      });
+      return cli.ok("Deployed your app on the host machine!");
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.commandList.generateBundle" id="apidoc.element.pm2-meteor.commandList.generateBundle">
+        function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>generateBundle
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generateBundle = function () {
+  var pm2mConf;
+  cli.spinner("Generating bundle with pm2-env file");
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  return async.series([
+    function(cb) {
+      return localTasks.generatePM2EnvironmentSettings(pm2mConf, cb);
+    }, function(cb) {
+      return localTasks.bundleApplication(pm2mConf, cb);
+    }, function(cb) {
+      return localTasks.makeCleanAndLeaveBundle(cb);
+    }
+  ], function(err) {
+    cli.spinner("", true);
+    if (err) {
+      return cli.fatal("" + err.message);
+    } else {
+      return cli.ok("Generated " + _settings.bundleTarName + " with pm2-env file");
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.commandList.init" id="apidoc.element.pm2-meteor.commandList.init">
+        function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  cli.spinner("Creating new pm2-meteor.json");
+  return localTasks.initPM2MeteorSettings(function(err) {
+    if (err) {
+      cli.spinner("", true);
+      return cli.fatal("" + err.message);
+    } else {
+      return cli.spinner(_settings.pm2MeteorConfigName + " created!", true);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.commandList.logs" id="apidoc.element.pm2-meteor.commandList.logs">
+        function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>logs
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logs = function () {
+  var pm2mConf, session;
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  session = remoteTasks.getRemoteSession(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.getAppLogs(session, pm2mConf, cb);
+    }
+  ], function(err) {
+    if (err) {
+      return cli.fatal("" + err.message);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.commandList.revert" id="apidoc.element.pm2-meteor.commandList.revert">
+        function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>revert
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">revert = function () {
+  var pm2mConf, session;
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  session = remoteTasks.getRemoteSession(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.revertToBackup(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.extractTarBall(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.installBundleDeps(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.reloadApp(session, pm2mConf, true, cb);
+    }
+  ], function(err) {
+    cli.spinner("", true);
+    if (err) {
+      return cli.fatal("" + err.message);
+    } else {
+      return cli.ok("Reverted and hard-restarted your app.");
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.commandList.scale" id="apidoc.element.pm2-meteor.commandList.scale">
+        function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>scale
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scale = function (opts) {
+  var pm2mConf, session;
+  cli.spinner("Scaling your App");
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  session = remoteTasks.getRemoteSession(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.scaleApp(session, pm2mConf, opts, cb);
+    }
+  ], function(err) {
+    cli.spinner("", true);
+    if (err) {
+      return cli.fatal("" + err.message);
+    } else {
+      return cli.ok("Scaled your App");
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.commandList.start" id="apidoc.element.pm2-meteor.commandList.start">
+        function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () {
+  var pm2mConf, session;
+  cli.spinner("Starting app on host machine");
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  session = remoteTasks.getRemoteSession(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.startApp(session, pm2mConf, cb);
+    }
+  ], function(err) {
+    cli.spinner("", true);
+    if (err) {
+      return cli.fatal("" + err.message);
+    } else {
+      return cli.ok("Started your app!");
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.commandList.status" id="apidoc.element.pm2-meteor.commandList.status">
+        function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>status
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">status = function () {
+  var pm2mConf, session;
+  cli.spinner("Checking status");
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  session = remoteTasks.getRemoteSession(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.status(session, pm2mConf, cb);
+    }
+  ], function(err, result) {
+    cli.spinner("", true);
+    if (err) {
+      return cli.fatal("" + err.message);
+    } else {
+      return cli.info(result);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    status: function() {
+var pm2mConf, session;
+cli.spinner("Checking status");
+pm2mConf = commonTasks.readPM2MeteorConfig();
+session = remoteTasks.getRemoteSession(pm2mConf);
+return async.series([
+  function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">status</span>(session, pm2mConf, cb);
+  }
+], function(err, result) {
+  cli.spinner("", true);
+  if (err) {
+    return cli.fatal("" + err.message);
+  } else {
+    return cli.info(result);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.commandList.stop" id="apidoc.element.pm2-meteor.commandList.stop">
+        function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>stop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function () {
+  var pm2mConf, session;
+  cli.spinner("Stopping app on host machine");
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  session = remoteTasks.getRemoteSession(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.stopApp(session, pm2mConf, cb);
+    }
+  ], function(err) {
+    cli.spinner("", true);
+    if (err) {
+      return cli.fatal("" + err.message);
+    } else {
+      return cli.ok("Stopped your app!");
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.commandList.undeploy" id="apidoc.element.pm2-meteor.commandList.undeploy">
+        function <span class="apidocSignatureSpan">pm2-meteor.commandList.</span>undeploy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">undeploy = function () {
+  var pm2mConf, session;
+  cli.spinner("Undeploying your App");
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  if (!(pm2mConf.allowUndeploy &amp;&amp; pm2mConf.allowUndeploy === true)) {
+    cli.fatal("Please set Â´allowUndeployÂ´ to true in your pm2-meteor settings file!");
+  }
+  session = remoteTasks.getRemoteSession(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.killApp(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.deleteAppFolder(session, pm2mConf, cb);
+    }
+  ], function(err) {
+    cli.spinner("", true);
+    if (err) {
+      return cli.fatal("" + err.message);
+    } else {
+      return cli.ok("Undeployed your App!");
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pm2-meteor.commonTasks" id="apidoc.module.pm2-meteor.commonTasks">module pm2-meteor.commonTasks</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.commonTasks.readPM2MeteorConfig" id="apidoc.element.pm2-meteor.commonTasks.readPM2MeteorConfig">
+        function <span class="apidocSignatureSpan">pm2-meteor.commonTasks.</span>readPM2MeteorConfig
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readPM2MeteorConfig = function () {
+  var conf, err;
+  conf = null;
+  try {
+    conf = JSON.parse(fs.readFileSync(_settings.pm2MeteorConfigName, 'utf8'));
+  } catch (error) {
+    err = error;
+    cli.fatal("Error while trying to read pm2-meteor config: " + err.message);
+  }
+  return conf;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      return cli.spinner(_settings.pm2MeteorConfigName + " created!", true);
+    }
+  });
+},
+deploy: function(reconfig) {
+  var pm2mConf, session;
+  cli.spinner("Building your app and deploying to host machine");
+  pm2mConf = commonTasks.<span class="apidocCodeKeywordSpan">readPM2MeteorConfig</span>();
+  session = remoteTasks.getRemoteSession(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.checkDeps(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.prepareHost(session, pm2mConf, cb);
+    }, function(cb) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pm2-meteor.localTasks" id="apidoc.module.pm2-meteor.localTasks">module pm2-meteor.localTasks</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.localTasks.bundleApplication" id="apidoc.element.pm2-meteor.localTasks.bundleApplication">
+        function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>bundleApplication
+        <span class="apidocSignatureSpan">(pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bundleApplication = function (pm2mConf, done) {
+  if (isGitProject(pm2mConf)) {
+    return this.bundleGitApplication(pm2mConf, done);
+  } else {
+    return this.bundleLocalApplication(pm2mConf, done);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function(cb) {
+  return remoteTasks.checkDeps(session, pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.prepareHost(session, pm2mConf, cb);
+}, function(cb) {
+  return localTasks.generatePM2EnvironmentSettings(pm2mConf, cb);
+}, function(cb) {
+  return localTasks.<span class="apidocCodeKeywordSpan">bundleApplication</span>(pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.backupLastTar(session, pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.shipTarBall(session, pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.extractTarBall(session, pm2mConf, cb);
+}, function(cb) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.localTasks.bundleGitApplication" id="apidoc.element.pm2-meteor.localTasks.bundleGitApplication">
+        function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>bundleGitApplication
+        <span class="apidocSignatureSpan">(pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bundleGitApplication = function (pm2mConf, done) {
+  return exec("cd " + CWD + " &amp;&amp; git clone " + pm2mConf.appLocation.git + " --branch " + pm2mConf.appLocation.branch + " " + _settings
+.gitDirName, function(err, stdout, stderr) {
+    var buildScript;
+    if (err) {
+      return done(err);
+    } else {
+      if (reapplyMeteorSettings(pm2mConf) === false) {
+        return done({
+          message: "Something went wrong wihile building METEOR_SETTINGS"
+        });
+      } else {
+        buildScript = "cd " + (path.join(CWD, _settings.gitDirName)) + " ";
+        if (pm2mConf.prebuildScript &amp;&amp; pm2mConf.prebuildScript.trim() !== "") {
+          buildScript += "&amp;&amp; " + pm2mConf.prebuildScript + " ";
+        }
+        buildScript += "&amp;&amp; meteor build " + pm2mConf.meteorBuildFlags + " --directory " + CWD;
+        return exec(buildScript, function(err, sdout, stderr) {
+          if (err) {
+            return done(err);
+          } else {
+            return exec("cd " + CWD + " &amp;&amp; tar -zcvf " + _settings.bundleTarName + " " + _settings.bundleName + " " + _settings.
+pm2EnvConfigName, {
+              maxBuffer: 1024 * 200000
+            }, function(err, stdout, stderr) {
+              if (err) {
+                return done(err);
+              } else {
+                return done();
+              }
+            });
+          }
+        });
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      message: "" + err.message
+    });
+  }
+  return done();
+},
+bundleApplication: function(pm2mConf, done) {
+  if (isGitProject(pm2mConf)) {
+    return this.<span class="apidocCodeKeywordSpan">bundleGitApplication</span>(pm2mConf, done);
+  } else {
+    return this.bundleLocalApplication(pm2mConf, done);
+  }
+},
+bundleLocalApplication: function(pm2mConf, done) {
+  var buildScript;
+  buildScript = "";
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.localTasks.bundleLocalApplication" id="apidoc.element.pm2-meteor.localTasks.bundleLocalApplication">
+        function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>bundleLocalApplication
+        <span class="apidocSignatureSpan">(pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bundleLocalApplication = function (pm2mConf, done) {
+  var buildScript;
+  buildScript = "";
+  if (pm2mConf.prebuildScript &amp;&amp; pm2mConf.prebuildScript.trim() !== "") {
+    buildScript += "cd " + (abs(pm2mConf.appLocation.local)) + " &amp;&amp; " + pm2mConf.prebuildScript + " &amp;&amp; ";
+  }
+  buildScript += "cd " + (abs(pm2mConf.appLocation.local)) + " &amp;&amp; meteor build " + pm2mConf.meteorBuildFlags + " --directory " +
+CWD;
+  return exec(buildScript, function(err, stdout, stderr) {
+    if (err) {
+      return done(err);
+    } else {
+      buildScript = "cd " + CWD + " &amp;&amp; tar -zcvf " + _settings.bundleTarName + " " + _settings.bundleName + " " + _settings.pm2EnvConfigName
+;
+      return exec(buildScript, {
+        maxBuffer: 1024 * 200000
+      }, function(err, stdout, stderr) {
+        if (err) {
+          return done(err);
+        } else {
+          return done();
+        }
+      });
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  return done();
+},
+bundleApplication: function(pm2mConf, done) {
+  if (isGitProject(pm2mConf)) {
+    return this.bundleGitApplication(pm2mConf, done);
+  } else {
+    return this.<span class="apidocCodeKeywordSpan">bundleLocalApplication</span>(pm2mConf, done);
+  }
+},
+bundleLocalApplication: function(pm2mConf, done) {
+  var buildScript;
+  buildScript = "";
+  if (pm2mConf.prebuildScript &amp;&amp; pm2mConf.prebuildScript.trim() !== "") {
+    buildScript += "cd " + (abs(pm2mConf.appLocation.local)) + " &amp;&amp; " + pm2mConf.prebuildScript + &amp;#
+x22; &amp;&amp; ";
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.localTasks.generatePM2EnvironmentSettings" id="apidoc.element.pm2-meteor.localTasks.generatePM2EnvironmentSettings">
+        function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>generatePM2EnvironmentSettings
+        <span class="apidocSignatureSpan">(pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generatePM2EnvironmentSettings = function (pm2mConf, done) {
+  var appJson, envJson, err, meteorSettingsLocation, meteorSettingsObj, prettyJson;
+  envJson = _settings.pm2EnvConfigTemplate;
+  appJson = {};
+  appJson.name = pm2mConf.appName;
+  appJson.env = pm2mConf.env;
+  appJson.script = path.join(pm2mConf.server.deploymentDir, pm2mConf.appName, "bundle/main.js");
+  appJson.exec_mode = pm2mConf.server.exec_mode;
+  appJson.instances = pm2mConf.server.instances;
+  meteorSettingsObj = {};
+  if (pm2mConf.meteorSettingsLocation &amp;&amp; !pm2mConf.meteorSettingsInRepo) {
+    try {
+      meteorSettingsLocation = abs(pm2mConf.meteorSettingsLocation);
+      meteorSettingsObj = JSON.parse(fs.readFileSync(meteorSettingsLocation, 'utf8'));
+    } catch (error) {
+      err = error;
+      done(err);
+    }
+  }
+  appJson.env["METEOR_SETTINGS"] = meteorSettingsObj;
+  envJson.apps.push(appJson);
+  prettyJson = JSON.stringify(envJson, null, 2);
+  try {
+    fs.writeFileSync(_settings.pm2EnvConfigName, prettyJson);
+  } catch (error) {
+    err = error;
+    done({
+      message: "" + err.message
+    });
+  }
+  return done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+session = remoteTasks.getRemoteSession(pm2mConf);
+return async.series([
+  function(cb) {
+    return remoteTasks.checkDeps(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.prepareHost(session, pm2mConf, cb);
+  }, function(cb) {
+    return localTasks.<span class="apidocCodeKeywordSpan">generatePM2EnvironmentSettings</span>(pm2mConf, cb);
+  }, function(cb) {
+    return localTasks.bundleApplication(pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.backupLastTar(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.shipTarBall(session, pm2mConf, cb);
+  }, function(cb) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.localTasks.initPM2MeteorSettings" id="apidoc.element.pm2-meteor.localTasks.initPM2MeteorSettings">
+        function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>initPM2MeteorSettings
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initPM2MeteorSettings = function (done) {
+  var err, json, prettyJson;
+  json = _settings.pm2MeteorConfigTemplate;
+  prettyJson = JSON.stringify(json, null, 2);
+  try {
+    fs.writeFileSync(_settings.pm2MeteorConfigName, prettyJson);
+  } catch (error) {
+    err = error;
+    done(err);
+  }
+  return done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+remoteTasks = require('./remoteTasks');
+
+_settings = require('./settings');
+
+module.exports = {
+  init: function() {
+    cli.spinner("Creating new pm2-meteor.json");
+    return localTasks.<span class="apidocCodeKeywordSpan">initPM2MeteorSettings</span>(function(err) {
+      if (err) {
+        cli.spinner("", true);
+        return cli.fatal("" + err.message);
+      } else {
+        return cli.spinner(_settings.pm2MeteorConfigName + " created!", true);
+      }
+    });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.localTasks.makeClean" id="apidoc.element.pm2-meteor.localTasks.makeClean">
+        function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>makeClean
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeClean = function (done) {
+  return exec("cd " + CWD + " &amp;&amp; rm -rf " + _settings.bundleName + " &amp;&amp; rm " + _settings.pm2EnvConfigName + " &amp;&amp; rm " + _settings
+.bundleTarName + " &amp;&amp; rm -rf " + _settings.gitDirName, function(err, stdout, stderr) {
+    if (err) {
+      return done(err);
+    } else {
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return remoteTasks.installBundleDeps(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.reloadApp(session, pm2mConf, reconfig, cb);
+  }
+], function(err) {
+  cli.spinner("", true);
+  if (err) {
+    localTasks.<span class="apidocCodeKeywordSpan">makeClean</span>(function(err) {
+      if (err) {
+        return cli.error(err);
+      }
+    });
+    return cli.fatal("" + err.message);
+  } else {
+    localTasks.makeClean(function(err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.localTasks.makeCleanAndLeaveBundle" id="apidoc.element.pm2-meteor.localTasks.makeCleanAndLeaveBundle">
+        function <span class="apidocSignatureSpan">pm2-meteor.localTasks.</span>makeCleanAndLeaveBundle
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeCleanAndLeaveBundle = function (done) {
+  return exec("cd " + CWD + " &amp;&amp; rm -rf " + _settings.bundleName + " &amp;&amp; rm " + _settings.pm2EnvConfigName + " &amp;&amp; rm -rf " + _settings
+.gitDirName, function(err, stdout, stderr) {
+    if (err) {
+      return done(err);
+    } else {
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+pm2mConf = commonTasks.readPM2MeteorConfig();
+return async.series([
+  function(cb) {
+    return localTasks.generatePM2EnvironmentSettings(pm2mConf, cb);
+  }, function(cb) {
+    return localTasks.bundleApplication(pm2mConf, cb);
+  }, function(cb) {
+    return localTasks.<span class="apidocCodeKeywordSpan">makeCleanAndLeaveBundle</span>(cb);
+  }
+], function(err) {
+  cli.spinner("", true);
+  if (err) {
+    return cli.fatal("" + err.message);
+  } else {
+    return cli.ok("Generated " + _settings.bundleTarName + " with pm2-env file");
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pm2-meteor.remoteTasks" id="apidoc.module.pm2-meteor.remoteTasks">module pm2-meteor.remoteTasks</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.backupLastTar" id="apidoc.element.pm2-meteor.remoteTasks.backupLastTar">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>backupLastTar
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">backupLastTar = function (session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "cd " + (getAppLocation(pm2mConf)) + " &amp;&amp; mv " + _settings.bundleTarName + " backup/ 2&gt;/dev/null");
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done();
+    } else {
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}, function(cb) {
+  return remoteTasks.prepareHost(session, pm2mConf, cb);
+}, function(cb) {
+  return localTasks.generatePM2EnvironmentSettings(pm2mConf, cb);
+}, function(cb) {
+  return localTasks.bundleApplication(pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.<span class="apidocCodeKeywordSpan">backupLastTar</span>(session, pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.shipTarBall(session, pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.extractTarBall(session, pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.installBundleDeps(session, pm2mConf, cb);
+}, function(cb) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.checkDeps" id="apidoc.element.pm2-meteor.remoteTasks.checkDeps">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>checkDeps
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkDeps = function (session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "(command -v node || echo 'missing node' 1&gt;&amp;2) &amp;&amp; (command -v npm || echo 'missing npm' 1&gt;&amp;2) &amp;&amp; (command
+ -v pm2 || echo 'missing pm2' 1&gt;&amp;2)");
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      if (logs.stderr &amp;&amp; logs.stderr.length &gt; 0 &amp;&amp; /.*missing.*/.test(logs.stderr)) {
+        console.log("");
+        console.log(logs.stderr);
+        return done({
+          message: "Please make sure you have node, npm and pm2 installed on your remote machine!"
+        });
+      } else {
+        return done();
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    deploy: function(reconfig) {
+var pm2mConf, session;
+cli.spinner("Building your app and deploying to host machine");
+pm2mConf = commonTasks.readPM2MeteorConfig();
+session = remoteTasks.getRemoteSession(pm2mConf);
+return async.series([
+  function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">checkDeps</span>(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.prepareHost(session, pm2mConf, cb);
+  }, function(cb) {
+    return localTasks.generatePM2EnvironmentSettings(pm2mConf, cb);
+  }, function(cb) {
+    return localTasks.bundleApplication(pm2mConf, cb);
+  }, function(cb) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.deleteAppFolder" id="apidoc.element.pm2-meteor.remoteTasks.deleteAppFolder">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>deleteAppFolder
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteAppFolder = function (session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "rm -rf " + (getAppLocation(pm2mConf)));
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      if (logs.stderr) {
+        console.log(logs.stder);
+      }
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  cli.fatal("Please set Â´allowUndeployÂ´ to true in your pm2-meteor settings file!");
+}
+session = remoteTasks.getRemoteSession(pm2mConf);
+return async.series([
+  function(cb) {
+    return remoteTasks.killApp(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">deleteAppFolder</span>(session, pm2mConf, cb);
+  }
+], function(err) {
+  cli.spinner("", true);
+  if (err) {
+    return cli.fatal("" + err.message);
+  } else {
+    return cli.ok("Undeployed your App!");
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.extractTarBall" id="apidoc.element.pm2-meteor.remoteTasks.extractTarBall">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>extractTarBall
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extractTarBall = function (session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "cd " + (getAppLocation(pm2mConf)) + " &amp;&amp; rm -rf " + _settings.bundleName + " &amp;&amp; tar -xf " + _settings
+.bundleTarName);
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }, function(cb) {
+    return localTasks.bundleApplication(pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.backupLastTar(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.shipTarBall(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">extractTarBall</span>(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.installBundleDeps(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.reloadApp(session, pm2mConf, reconfig, cb);
+  }
+], function(err) {
+  cli.spinner("", true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.getAppLogs" id="apidoc.element.pm2-meteor.remoteTasks.getAppLogs">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>getAppLogs
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAppLogs = function (session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "pm2 logs " + pm2mConf.appName);
+  return session.execute(cmd, {
+    onStdout: console.log
+  }, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      if (logs.stderr) {
+        return done({
+          message: logs.stderr
+        });
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+logs: function() {
+  var pm2mConf, session;
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  session = remoteTasks.getRemoteSession(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.<span class="apidocCodeKeywordSpan">getAppLogs</span>(session, pm2mConf, cb);
+    }
+  ], function(err) {
+    if (err) {
+      return cli.fatal("" + err.message);
+    }
+  });
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.getRemoteSession" id="apidoc.element.pm2-meteor.remoteTasks.getRemoteSession">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>getRemoteSession
+        <span class="apidocSignatureSpan">(pm2mConf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRemoteSession = function (pm2mConf) {
+  var session;
+  session = nodemiral.session("" + pm2mConf.server.host, {
+    username: pm2mConf.server.username,
+    password: pm2mConf.server.password ? pm2mConf.server.password : void 0,
+    pem: pm2mConf.server.pem ? fs.readFileSync(abs(pm2mConf.server.pem)) : void 0
+  }, {
+    ssh: pm2mConf.server.port ? {
+      port: pm2mConf.server.port
+    } : void 0
+  });
+  return session;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+},
+deploy: function(reconfig) {
+  var pm2mConf, session;
+  cli.spinner("Building your app and deploying to host machine");
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  session = remoteTasks.<span class="apidocCodeKeywordSpan">getRemoteSession</span>(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.checkDeps(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.prepareHost(session, pm2mConf, cb);
+    }, function(cb) {
+      return localTasks.generatePM2EnvironmentSettings(pm2mConf, cb);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.hardReloadApp" id="apidoc.element.pm2-meteor.remoteTasks.hardReloadApp">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>hardReloadApp
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hardReloadApp = function (session, pm2mConf, done) {
+  var cmd1;
+  cmd1 = cmdString(pm2mConf, "cd " + (getAppLocation(pm2mConf)) + " &amp;&amp; pm2 delete " + pm2mConf.appName);
+  return session.execute(cmd1, {}, function(err, code, logs) {
+    var cmd2;
+    if (err) {
+      return done(err);
+    } else {
+      if (logs.sterr) {
+        console.log(logs.stderr);
+      }
+      cmd2 = cmdString(pm2mConf, "cd " + (getAppLocation(pm2mConf)) + " &amp;&amp; pm2 start " + _settings.pm2EnvConfigName);
+      return session.execute(cmd2, {}, function(err, code, logs) {
+        if (err) {
+          return done(err);
+        } else {
+          if (logs.stderr) {
+            console.log(logs.stderr);
+          }
+          return done();
+        }
+      });
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    } else {
+      return done();
+    }
+  });
+},
+reloadApp: function(session, pm2mConf, reconfig, done) {
+  if (reconfig) {
+    return this.<span class="apidocCodeKeywordSpan">hardReloadApp</span>(session, pm2mConf, done);
+  } else {
+    return this.softReloadApp(session, pm2mConf, done);
+  }
+},
+softReloadApp: function(session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "cd " + (getAppLocation(pm2mConf)) + " &amp;&amp; pm2 startOrReload " + _settings
+.pm2EnvConfigName);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.installBundleDeps" id="apidoc.element.pm2-meteor.remoteTasks.installBundleDeps">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>installBundleDeps
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">installBundleDeps = function (session, pm2mConf, done) {
+  var cmd, serverLocation;
+  serverLocation = path.join(getAppLocation(pm2mConf), _settings.bundleName, "/programs/server");
+  cmd = cmdString(pm2mConf, "cd " + serverLocation + " &amp;&amp; node --version &amp;&amp; npm i .");
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }, function(cb) {
+    return remoteTasks.backupLastTar(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.shipTarBall(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.extractTarBall(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">installBundleDeps</span>(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.reloadApp(session, pm2mConf, reconfig, cb);
+  }
+], function(err) {
+  cli.spinner("", true);
+  if (err) {
+    localTasks.makeClean(function(err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.killApp" id="apidoc.element.pm2-meteor.remoteTasks.killApp">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>killApp
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">killApp = function (session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "pm2 delete " + pm2mConf.appName);
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+pm2mConf = commonTasks.readPM2MeteorConfig();
+if (!(pm2mConf.allowUndeploy &amp;&amp; pm2mConf.allowUndeploy === true)) {
+  cli.fatal("Please set Â´allowUndeployÂ´ to true in your pm2-meteor settings file!");
+}
+session = remoteTasks.getRemoteSession(pm2mConf);
+return async.series([
+  function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">killApp</span>(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.deleteAppFolder(session, pm2mConf, cb);
+  }
+], function(err) {
+  cli.spinner("", true);
+  if (err) {
+    return cli.fatal("" + err.message);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.prepareHost" id="apidoc.element.pm2-meteor.remoteTasks.prepareHost">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>prepareHost
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareHost = function (session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "mkdir -p " + (path.join(getAppLocation(pm2mConf), _settings.backupDir)));
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      if (logs.stderr &amp;&amp; logs.stderr.length &gt; 0) {
+        done({
+          message: "" + logs.stderr
+        });
+      }
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+cli.spinner("Building your app and deploying to host machine");
+pm2mConf = commonTasks.readPM2MeteorConfig();
+session = remoteTasks.getRemoteSession(pm2mConf);
+return async.series([
+  function(cb) {
+    return remoteTasks.checkDeps(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">prepareHost</span>(session, pm2mConf, cb);
+  }, function(cb) {
+    return localTasks.generatePM2EnvironmentSettings(pm2mConf, cb);
+  }, function(cb) {
+    return localTasks.bundleApplication(pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.backupLastTar(session, pm2mConf, cb);
+  }, function(cb) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.reloadApp" id="apidoc.element.pm2-meteor.remoteTasks.reloadApp">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>reloadApp
+        <span class="apidocSignatureSpan">(session, pm2mConf, reconfig, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reloadApp = function (session, pm2mConf, reconfig, done) {
+  if (reconfig) {
+    return this.hardReloadApp(session, pm2mConf, done);
+  } else {
+    return this.softReloadApp(session, pm2mConf, done);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }, function(cb) {
+    return remoteTasks.shipTarBall(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.extractTarBall(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.installBundleDeps(session, pm2mConf, cb);
+  }, function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">reloadApp</span>(session, pm2mConf, reconfig, cb);
+  }
+], function(err) {
+  cli.spinner("", true);
+  if (err) {
+    localTasks.makeClean(function(err) {
+      if (err) {
+        return cli.error(err);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.revertToBackup" id="apidoc.element.pm2-meteor.remoteTasks.revertToBackup">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>revertToBackup
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">revertToBackup = function (session, pm2mConf, done) {
+  var appLocation, backupLocation, cmd;
+  appLocation = getAppLocation(pm2mConf);
+  backupLocation = getBackupLocation(pm2mConf);
+  cmd = cmdString(pm2mConf, "mv " + (path.join(backupLocation, _settings.bundleTarName)) + " " + (path.join(appLocation, _settings
+.bundleTarName)));
+  console.log("executing " + cmd);
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      if (logs.stderr) {
+        console.log("*** stderr while reverting to backup ***");
+        done({
+          message: logs.stderr
+        });
+      }
+      if (logs.stdout) {
+        console.log(logs.stdout);
+      }
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+revert: function() {
+  var pm2mConf, session;
+  pm2mConf = commonTasks.readPM2MeteorConfig();
+  session = remoteTasks.getRemoteSession(pm2mConf);
+  return async.series([
+    function(cb) {
+      return remoteTasks.<span class="apidocCodeKeywordSpan">revertToBackup</span>(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.extractTarBall(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.installBundleDeps(session, pm2mConf, cb);
+    }, function(cb) {
+      return remoteTasks.reloadApp(session, pm2mConf, true, cb);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.scaleApp" id="apidoc.element.pm2-meteor.remoteTasks.scaleApp">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>scaleApp
+        <span class="apidocSignatureSpan">(session, pm2mConf, sParam, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scaleApp = function (session, pm2mConf, sParam, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "pm2 scale " + pm2mConf.appName + " " + sParam);
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      if (logs.stderr) {
+        done({
+          message: logs.stderr
+        });
+      }
+      if (logs.stdout) {
+        console.log(logs.stdout);
+      }
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    scale: function(opts) {
+var pm2mConf, session;
+cli.spinner("Scaling your App");
+pm2mConf = commonTasks.readPM2MeteorConfig();
+session = remoteTasks.getRemoteSession(pm2mConf);
+return async.series([
+  function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">scaleApp</span>(session, pm2mConf, opts, cb);
+  }
+], function(err) {
+  cli.spinner("", true);
+  if (err) {
+    return cli.fatal("" + err.message);
+  } else {
+    return cli.ok("Scaled your App");
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.shipTarBall" id="apidoc.element.pm2-meteor.remoteTasks.shipTarBall">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>shipTarBall
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shipTarBall = function (session, pm2mConf, done) {
+  var destination, tarLocation;
+  tarLocation = path.join(CWD, _settings.bundleTarName);
+  destination = path.join(getAppLocation(pm2mConf), _settings.bundleTarName);
+  console.log(tarLocation);
+  console.log(destination);
+  return session.copy(tarLocation, destination, {
+    progressBar: true
+  }, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}, function(cb) {
+  return localTasks.generatePM2EnvironmentSettings(pm2mConf, cb);
+}, function(cb) {
+  return localTasks.bundleApplication(pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.backupLastTar(session, pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.<span class="apidocCodeKeywordSpan">shipTarBall</span>(session, pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.extractTarBall(session, pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.installBundleDeps(session, pm2mConf, cb);
+}, function(cb) {
+  return remoteTasks.reloadApp(session, pm2mConf, reconfig, cb);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.softReloadApp" id="apidoc.element.pm2-meteor.remoteTasks.softReloadApp">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>softReloadApp
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">softReloadApp = function (session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "cd " + (getAppLocation(pm2mConf)) + " &amp;&amp; pm2 startOrReload " + _settings.pm2EnvConfigName);
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      if (logs.stderr) {
+        console.log(logs.stderr);
+      }
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+},
+reloadApp: function(session, pm2mConf, reconfig, done) {
+  if (reconfig) {
+    return this.hardReloadApp(session, pm2mConf, done);
+  } else {
+    return this.<span class="apidocCodeKeywordSpan">softReloadApp</span>(session, pm2mConf, done);
+  }
+},
+softReloadApp: function(session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "cd " + (getAppLocation(pm2mConf)) + " &amp;&amp; pm2 startOrReload " + _settings
+.pm2EnvConfigName);
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.startApp" id="apidoc.element.pm2-meteor.remoteTasks.startApp">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>startApp
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startApp = function (session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "cd " + (getAppLocation(pm2mConf)) + " &amp;&amp; pm2 start " + _settings.pm2EnvConfigName);
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      if (logs.stderr) {
+        done({
+          message: logs.stderr
+        });
+      }
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    start: function() {
+var pm2mConf, session;
+cli.spinner("Starting app on host machine");
+pm2mConf = commonTasks.readPM2MeteorConfig();
+session = remoteTasks.getRemoteSession(pm2mConf);
+return async.series([
+  function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">startApp</span>(session, pm2mConf, cb);
+  }
+], function(err) {
+  cli.spinner("", true);
+  if (err) {
+    return cli.fatal("" + err.message);
+  } else {
+    return cli.ok("Started your app!");
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.status" id="apidoc.element.pm2-meteor.remoteTasks.status">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>status
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">status = function (session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "pm2 show " + pm2mConf.appName);
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      if (logs.stderr) {
+        done(null, logs.stderr);
+      }
+      if (logs.stdout) {
+        return done(null, logs.stdout);
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    status: function() {
+var pm2mConf, session;
+cli.spinner("Checking status");
+pm2mConf = commonTasks.readPM2MeteorConfig();
+session = remoteTasks.getRemoteSession(pm2mConf);
+return async.series([
+  function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">status</span>(session, pm2mConf, cb);
+  }
+], function(err, result) {
+  cli.spinner("", true);
+  if (err) {
+    return cli.fatal("" + err.message);
+  } else {
+    return cli.info(result);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pm2-meteor.remoteTasks.stopApp" id="apidoc.element.pm2-meteor.remoteTasks.stopApp">
+        function <span class="apidocSignatureSpan">pm2-meteor.remoteTasks.</span>stopApp
+        <span class="apidocSignatureSpan">(session, pm2mConf, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopApp = function (session, pm2mConf, done) {
+  var cmd;
+  cmd = cmdString(pm2mConf, "cd " + (getAppLocation(pm2mConf)) + " &amp;&amp; pm2 stop " + _settings.pm2EnvConfigName);
+  return session.execute(cmd, {}, function(err, code, logs) {
+    if (err) {
+      return done(err);
+    } else {
+      if (logs.stderr) {
+        done({
+          message: logs.stderr
+        });
+      }
+      return done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    stop: function() {
+var pm2mConf, session;
+cli.spinner("Stopping app on host machine");
+pm2mConf = commonTasks.readPM2MeteorConfig();
+session = remoteTasks.getRemoteSession(pm2mConf);
+return async.series([
+  function(cb) {
+    return remoteTasks.<span class="apidocCodeKeywordSpan">stopApp</span>(session, pm2mConf, cb);
+  }
+], function(err) {
+  cli.spinner("", true);
+  if (err) {
+    return cli.fatal("" + err.message);
+  } else {
+    return cli.ok("Stopped your app!");
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
