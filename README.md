@@ -1,4 +1,7 @@
-# api documentation for  [pm2-meteor (v0.4.1)](https://github.com/andruschka/pm2-meteor)  [![npm package](https://img.shields.io/npm/v/npmdoc-pm2-meteor.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-pm2-meteor) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-pm2-meteor.svg)](https://travis-ci.org/npmdoc/node-npmdoc-pm2-meteor)
+# npmdoc-pm2-meteor
+
+#### basic api documentation for  [pm2-meteor (v0.4.1)](https://github.com/andruschka/pm2-meteor)  [![npm package](https://img.shields.io/npm/v/npmdoc-pm2-meteor.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-pm2-meteor) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-pm2-meteor.svg)](https://travis-ci.org/npmdoc/node-npmdoc-pm2-meteor)
+
 #### Simplest way to deploy, scale and run Meteor Apps with PM2.
 
 [![NPM](https://nodei.co/npm/pm2-meteor.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/pm2-meteor)
